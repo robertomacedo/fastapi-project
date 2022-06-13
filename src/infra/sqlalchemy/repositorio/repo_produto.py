@@ -1,13 +1,13 @@
 from sqlalchemy.orm import Session 
 from src.schemas import schems
-from src.infra.models import models
+from src.infra.sqlalchemy.models import models
 
 class RepoProduto():
     def __init__(self, db: Session):
         self.db = db
 
 
-    def criar(self, produto: schemas.Produto):
+    def criar(self, produto: schems.Produto):
         db_produto = models.Produto(nome=produto.nome,
                                     detalhe=produto.detalhe,
                                     preco=produto.preco,
